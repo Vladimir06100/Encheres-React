@@ -9,7 +9,7 @@
   <?php
   $dbh = new PDO("mysql:dbname=encheres;host=localhost", "root", "root");
   //preparer//
-  $query = $dbh->prepare("SELECT * FROM article WHERE 1 ON ");
+  $query = $dbh->prepare("SELECT * FROM article WHERE 1 ");
   //executer//
   $query->execute();
   //récupérer//
