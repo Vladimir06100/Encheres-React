@@ -4,6 +4,6 @@
     <h2>Enchères</h2>
   </div>
   <div>
-    <button class="btn-accueil"><a href="/Encheres/code.php">Accueil</a></button>
+    <button class="btn-accueil"><a href="/Encheres/index.php">Accueil</a></button>
   </div>
 </div>

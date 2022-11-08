@@ -15,7 +15,7 @@
   // фальшивый index.php
   echo "hello World";
   ?>
-
+  <?php include_once './template/footer.php' ?>
 </body>
 
 </html>
