@@ -1,0 +1,79 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Poppins", sans-serif;
+	color: #444444;
+}
+.img {
+	width: 80%;
+	height: 80%;
+	border: 1px solid rgb(128, 128, 128);
+}
+
+.footer {
+	background-color: rgb(128, 128, 128);
+}
+
+.header {
+	background-color: rgb(128, 128, 128);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 10vh;
+}
+.textHeader {
+	display: flex;
+	justify-content: center;
+
+	padding: 0 auto;
+	width: 80vw;
+}
+.btnHeader {
+	width: 20vw;
+}
+.btnHeader a {
+	text-decoration: none;
+	color: black;
+}
+.btnHeader button {
+	font-family: Arial;
+	padding: 0.4rem 0.8rem;
+	margin: 0.2rem;
+	margin-bottom: 1rem;
+	border-width: 1px;
+	color: #3a8a9e;
+	border-color: #d6bcd6;
+	font-weight: italic;
+	border-top-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	box-shadow: 3px 4px 6px 0px #899599;
+	text-shadow: 2px 2px 4px #e1e2ed;
+	background: linear-gradient(rgba(233, 218, 218, 1), #bab1ba);
+}
+.btnHeader button:hover {
+	background: linear-gradient(#bab1ba, rgba(233, 218, 218, 1));
+}
+.footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 5vh;
+}
+.principale {
+	height: 85vh;
+	overflow: auto;
+	background-color: rgba(128, 128, 128, 0.091);
+}
+.sectionPrincipale {
+	width: 80vw;
+	margin: 0 auto;
+}
+.affichageVoiture {
+	margin: 1rem 0;
+}
+.textVoiture {
+	display: flex;
+}
+.textVoiture p {
+	padding: 1rem;
+}

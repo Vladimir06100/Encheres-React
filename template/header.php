@@ -1,9 +1,8 @@
 <div class="header">
-  <div>
-    <h1 class="h1-header">Salut et bienvenue sur le Site</h1>
-    <h2>Enchères</h2>
+  <div class="textHeader">
+    <h1 class="h1-header">Salut et bienvenue sur le Site des Enchères</h1>
   </div>
-  <div>
+  <div class="btnHeader">
     <button class="btn-accueil"><a href="/Encheres/index.php">Accueil</a></button>
   </div>
 </div>
