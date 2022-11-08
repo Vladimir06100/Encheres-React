@@ -14,6 +14,7 @@
   <?php
   // фальшивый index.php
   echo "hello World";
+  include './pages/affichageArticle.php'
   ?>
   <?php include_once './template/footer.php' ?>
 </body>
