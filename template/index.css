@@ -36,7 +36,6 @@
 
 .btn-accueil {
   text-decoration: none;
-  color: black;
   font-family: Arial;
   padding: 0.4rem 0.8rem;
   margin: 0.2rem;
@@ -83,5 +82,9 @@
 }
 
 .textVoiture p {
+  padding: 1rem;
+}
+
+.h2connexion {
   padding: 1rem;
 }
