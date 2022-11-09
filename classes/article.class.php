@@ -57,7 +57,6 @@ class Article
     echo "<img src=\"" . $this->img . "\" >";
   }
 
-
   public function getMarque()
   {
     return $this->marque;
