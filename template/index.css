@@ -39,7 +39,6 @@
   font-family: Arial;
   padding: 0.4rem 0.8rem;
   margin: 0.2rem;
-  margin-bottom: 1rem;
   border-width: 1px;
   color: #444444;
   border-color: #d6bcd6;
@@ -63,6 +62,7 @@
 }
 
 .principale {
+  min-height: 85vh;
   height: 85vh;
   overflow: auto;
 }
@@ -70,7 +70,7 @@
 .sectionPrincipale,
 .connexion {
   width: 80vw;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .affichageVoiture {
@@ -87,4 +87,14 @@
 
 .h2connexion {
   padding: 1rem;
+}
+
+.textInscription {
+  display: flex;
+  align-items: center;
+}
+
+.formConnexion input {
+  width: auto;
+  padding: 0.2rem;
 }

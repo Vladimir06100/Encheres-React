@@ -7,7 +7,7 @@
 
 <body>
   <?php
-  $dbh = new PDO("mysql:dbname=enchere;host=127.0.0.1", "root", "");
+  $dbh = new PDO("mysql:dbname=enchere;host=127.0.0.1", "root", "root");
   require './voiture.class.php';
 
   //preparer//
@@ -15,7 +15,7 @@
   $query = $dbh->prepare("SELECT * FROM voiture WHERE 1");
   //executer//
   $query->execute();
-  //recuperer//
+  //récupérer//
   $voitures = $query->fetchAll(PDO::FETCH_ASSOC);
   $article_database = [];
 
