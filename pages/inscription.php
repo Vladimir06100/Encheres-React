@@ -8,6 +8,7 @@ if (isset($_POST['nom'])) {
   $password = $_POST['password'];
   $register = $dbh->prepare("INSERT INTO `users`(`id`, `nom`, `prenom`, `email`, `password`) VALUES (NULL,'$nom','$prenom','$email','$password')");
   $register->execute();
+  header("Location: http://localhost:8888/Encheres/pages/pageProfile.php");
 }
 
 ?>
@@ -33,16 +34,6 @@ if (isset($_POST['nom'])) {
           <button type="submit" name="inscription">Valider</button>
         </form>
         <section>
-          <?php if ($register) {
-            echo "felicitation";
-          ?>
-            <h3>Vous êtes bien enregistrée</h3>
-
-          <?php
-          } else {
-          ?>
-            <h3>Ups problème!!</h3>
-          <?php  } ?>
     </div>
   </div>
   <?php include_once '../template/footer.php' ?>
