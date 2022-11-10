@@ -1,16 +1,16 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $dbh = new PDO("mysql:dbname=encheres;host=127.0.0.1;port=8889", "root", "root");
-  $query = $dbh->prepare("SELECT users.email, users.password, FROM users WHERE email=? AND password=?");
+  $dbh = new PDO("mysql:dbname=encheres;host=localhost", "root", "root");
+  $query = $dbh->prepare("SELECT users.email, users.password FROM users WHERE email= ? AND password= ? ");
   $query->execute([$_POST['email'], $_POST['password']]);
   //récupérer//
   $produits = $query->fetchAll(PDO::FETCH_ASSOC);
-  if (!empty($produit)) {
-    header("Location http://localhost:8888/Encheres/pages/pageProfile.php");
+  if (!empty($produits)) {
+    header("Location: http://localhost:8888/Encheres/pages/pageProfile.php");
+  } else {
+    $conex = '<label>Email ou mot de passe Incorrect!!</label>';
   }
-  echo "404";
 }
-
 ?>
 
 <!DOCTYPE html>
