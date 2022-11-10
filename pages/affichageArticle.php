@@ -18,7 +18,7 @@
         <section class="affichageVoiture">
           <div class="textVoiture">
             <p><?php echo "Marque : " . $produit->getMarque(); ?></p>
-            <p><?php echo "Modèle : " . $produit->getMarque(); ?></p>
+            <p><?php echo "Modèle : " . $produit->getModele(); ?></p>
             <p><?php echo "Prix : " . $produit->getPrix(); ?></p>
           </div>
           <p><?php echo "<img class='img' src='" . $produit->img . "' />"; ?></p>
