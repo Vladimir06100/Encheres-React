@@ -1,4 +1,5 @@
 <?php
+session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $dbh = new PDO("mysql:dbname=encheres;host=localhost", "root", "root");
   $query = $dbh->prepare("SELECT users.email, users.password FROM users WHERE email= ? AND password= ? ");

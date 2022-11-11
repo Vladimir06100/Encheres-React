@@ -48,10 +48,12 @@ class Voiture
 
   public function afficherToutesLesInformations()
   {
-    echo "<p>" . $this->getModele() . "</p>";
     echo "<p>" . $this->getMarque() . "</p>";
-    echo "<p>" . $this->getPrix() . "</p>";
+    echo "<p>" . $this->getModele() . "</p>";
+    echo "<p>" . $this->getPuissance() . "</p>";
     echo "<img src=\"" . $this->image . "\" >";
+    echo "<p>". $this->getAnnee(). "</p>";
+    echo "<p>" . $this->getPrix() . "</p>";
   }
 
   public function getMarque()
