@@ -2,22 +2,22 @@
 include 'article.class.php';
 class Detail extends Voiture
 {
-  public string $nom;
-  public string $prenom;
+  public ?string $nom = null;
+  public ?string $prenom = null;
 
   public static function findAll()
   {
     $dbh = new PDO("mysql:dbname=encheres;host=localhost", "root", "root");
     //preparer//
-    $query = $dbh->prepare("SELECT voiture.*, vendeur.* vendeur.nom AS nom, vendeur.prenom AS prenom FROM voiture v LEFT JOIN vendeur v  ON v.vendeur_id = v.id");
+    $query = $dbh->prepare("SELECT voiture.*, vendeur.* FROM voiture LEFT JOIN vendeur ON voiture.id_vendeur = vendeur.id");
     //executer//
     $query->execute();
     //récupérer//
-    $produits = $query->fetchAll(PDO::FETCH_ASSOC);
+    $produits1 = $query->fetchAll(PDO::FETCH_ASSOC);
 
     $article_database = [];
-    foreach ($produits as $value) {
-      $produits = new Detail(
+    foreach ($produits1 as $value) {
+      $produits1 = new Detail(
         $value["marque"],
         $value["modele"],
         $value['puissance'],
@@ -27,7 +27,7 @@ class Detail extends Voiture
         $value["nom"],
         $value["prenom"],
       );
-      array_push($article_database, $produits);
+      array_push($article_database, $produits1);
     }
     return $article_database;
   }
