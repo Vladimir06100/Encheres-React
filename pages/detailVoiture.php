@@ -8,17 +8,14 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
   $con = new PDO("mysql:dbname=encheres;host=localhost", "root", "root");
 
-  if ($_GET['user.id']) {
-    $filteredId = $_GET['user.id'];
-    $query = $con->prepare("SELECT voiture.marque, voiture.modele, voiture.puissance, voiture.image, voiture.annee, voiture.prix_depart FROM voiture WHERE id=$filteredId");
-
+  if ($_GET) {
+    $id = $_GET['id'];
+    $query = $con->prepare("SELECT * FROM voiture WHERE id=$id");
     $query->execute();
-
-
     $voiture = $query->fetchAll(PDO::FETCH_ASSOC);
 
     foreach ($voiture as $item) {
-      $item = new voiture(
+      $item = new Voiture(
         $item["marque"],
         $item["modele"],
         $item["puissance"],
@@ -45,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
   <?php include_once '../template/header.php' ?>
   <div class="principale">
     <section class="sectionPrincipale">
-
+      <?php  ?>
     </section>
   </div>
   <?php include '../template/footer.php'; ?>
