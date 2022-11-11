@@ -8,11 +8,12 @@ if (isset($_POST['nom'])) {
   $password = $_POST['password'];
   $register = $dbh->prepare("INSERT INTO `users`(`id`, `nom`, `prenom`, `email`, `password`) VALUES (NULL,'$nom','$prenom','$email','$password')");
   $register->execute();
-  header("Location: http://localhost:8888/Encheres/pages/pageProfile.php");
-} else {
-  echo "<h1>Error</h1>";
+  if ($register) {
+    header("Location: http://localhost:8888/Encheres/pages/pageProfile.php");
+  } else {
+    echo "<h1>Error</h1>";
+  }
 }
-
 ?>
 <!DOCTYPE html>
 <html>
