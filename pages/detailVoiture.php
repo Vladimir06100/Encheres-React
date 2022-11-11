@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
       );
 
 
-      $item->affichage();
+      $item->afficherToutesLesInformations();
     }
   }
 }
