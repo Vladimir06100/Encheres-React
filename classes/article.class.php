@@ -1,27 +1,20 @@
 <?php
-class Article
+class Voiture
 {
-  //compteur de produit
-  public static int $counter = 0;
-
-  // Nom du Article
-  private string $modele;
-
-  // Nom du Marque
   private string $marque;
+  private string $modele;
+  private int $puissance;
+  public string $image;
+  private string $annee;
+  private string $prix;
 
-  // Prix Article
-  protected string $prix;
-
-  //Photo
-  public string $img;
 
 
   public static function findAllArticles()
   {
     $dbh = new PDO("mysql:dbname=encheres;host=localhost", "root", "root");
     //preparer//
-    $query = $dbh->prepare("SELECT a.*, v.* FROM article a LEFT JOIN vendeur v ON a.id_vendeur = v.id");
+    $query = $dbh->prepare("SELECT * FROM voiture");
     //executer//
     $query->execute();
     //récupérer//
@@ -29,22 +22,26 @@ class Article
 
     $article_database = [];
     foreach ($produits as $value) {
-      $produit = new Article(
+      $produits = new Voiture(
         $value["marque"],
         $value["modele"],
-        $value["prix"],
-        $value["img"],
+        $value['puissance'],
+        $value["image"],
+        $value["annee"],
+        $value["prix_depart"],
       );
-      array_push($article_database, $produit);
+      array_push($article_database, $produits);
     }
     return $article_database;
   }
-  public function __construct($modele, $marque, $prix, $img)
+  public function __construct($marque, $modele, $puissance, $image, $annee, $prix_depart)
   {
-    $this->modele = $modele;
     $this->marque = $marque;
-    $this->prix = $prix;
-    $this->img = $img;
+    $this->modele = $modele;
+    $this->puissance = $puissance;
+    $this->image = $image;
+    $this->annee = $annee;
+    $this->prix = $prix_depart;
     // a chaque fois que j'ajoute un produit, je vais incrémenter ma variable static counter
     //self::$counter = self::$counter + 1;
   }
@@ -54,7 +51,7 @@ class Article
     echo "<p>" . $this->getModele() . "</p>";
     echo "<p>" . $this->getMarque() . "</p>";
     echo "<p>" . $this->getPrix() . "</p>";
-    echo "<img src=\"" . $this->img . "\" >";
+    echo "<img src=\"" . $this->image . "\" >";
   }
 
   public function getMarque()
@@ -69,6 +66,29 @@ class Article
     }
   }
 
+  public function getAnnee()
+  {
+    return 'annee' . $this->annee;
+  }
+
+  public function setAnnee($annee)
+  {
+    if ($annee != "") {
+      $this->annee = $annee;
+    }
+  }
+
+  public function getPuissance()
+  {
+    return $this->puissance . 'Chevaux';
+  }
+
+  public function setPuissance($puissance)
+  {
+    if ($puissance != "") {
+      $this->puissance = $puissance;
+    }
+  }
   // on affiche le prix 
   public function getPrix()
   {
@@ -95,5 +115,4 @@ class Article
       $this->modele = $modele;
     }
   }
-
 }

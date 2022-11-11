@@ -79,6 +79,7 @@
 
 .textVoiture {
   display: flex;
+  align-items: center;
 }
 
 .textVoiture p {

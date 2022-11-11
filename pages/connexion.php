@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (!empty($produits)) {
     header("Location: http://localhost:8888/Encheres/pages/pageProfile.php");
   } else {
-    $conex = '<label>Email ou mot de passe Incorrect!!</label>';
+  '<label>Email ou mot de passe Incorrect!!</label>';
   }
 }
 ?>
