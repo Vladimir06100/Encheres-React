@@ -12,7 +12,6 @@
     <section class="sectionPrincipale">
       <h1>Bienvenue sur votre Profile </h1>
       <a class="btn-accueil" href="/Encheres/pages/CreateEnchere.php">cree un enchere</a>
-      <a class="btn-accueil" href="/Encheres/pages/CreateNewVoiture.php">Ajouter un voiture</a>
     </section>
   </div>
   <?php include_once '../template/footer.php' ?>

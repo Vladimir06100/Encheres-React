@@ -33,13 +33,21 @@ if (isset($_POST['marque'])) {
         <h1>Ajoutez une nouvelle voiture</h1>
         <section>
           <form class="formEnchere" action="" method="POST">
+            <label>date fin Enchere</label>
             <input type="date" name="enchere" placeholder="date finale enchere" />
+            <label>Marque</label>
             <input type="text" name="marque" placeholder="marque" />
+            <label>Modele</label>
             <input type="text" name="modele" placeholder="modele" />
+            <label>Puissance (uniquement Chiffres)</label>
             <input type="text" name="puissance" placeholder="puissance" />
+            <label>Photo(URL)</label>
             <input type="text" name="image" placeholder="url de l'image" />
+            <label>Annee (uniquement Chiffres)</label>
             <input type="text" name="annee" placeholder="annee" />
+            <label>Prix de depart (uniquement Chiffres)</label>
             <input type="text" name="prix_depart" placeholder="prix_depart" />
+            
             <input type="submit" name="enregistrer" />
           </form>
           <section>
