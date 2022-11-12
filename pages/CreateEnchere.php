@@ -32,7 +32,7 @@ if (isset($_POST['marque'])) {
       <div>
         <h1>Ajoutez une nouvelle voiture</h1>
         <section>
-          <form class="formEchere" action="" method="POST">
+          <form class="formEnchere" action="" method="POST">
             <label>date fin Enchere</label>
             <input type="date" name="enchere" placeholder="date finale enchere" />
             <label>Marque</label>
