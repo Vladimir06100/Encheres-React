@@ -8,7 +8,7 @@ class Detail extends Voiture
   public static function findAllArticles()
   {
 
-    if ($_SERVER["REQUEST_METHOD"] == "GET" && $_GET['id']) {
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
       $dbh = new PDO("mysql:dbname=encheres;host=localhost", "root", "root");
       //preparer//
       //  if ($_GET['id']) {
@@ -16,8 +16,8 @@ class Detail extends Voiture
 
       //$get = $_POST['voiture.id'];..
       // echo $get;...
-      $id = $_GET["voiture.id"];
-      $query = $dbh->prepare("SELECT voiture.*, vendeur.* FROM voiture LEFT JOIN vendeur ON voiture.id_vendeur = vendeur.id WHERE id=$id");
+      //$id = $_GET["voiture.id"];
+      $query = $dbh->prepare("SELECT voiture.*, vendeur.* FROM voiture LEFT JOIN vendeur ON voiture.id_vendeur = vendeur.id ");
       //executer//
       $query->execute();
       //récupérer//
