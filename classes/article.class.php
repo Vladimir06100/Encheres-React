@@ -2,6 +2,9 @@
 class Voiture
 {
   public ?string $id;
+  private  string $date;
+
+  private int $enchere;
   private string $marque;
   private string $modele;
   private int $puissance;
@@ -15,7 +18,7 @@ class Voiture
   {
     $dbh = new PDO("mysql:dbname=encheres;host=localhost", "root", "root");
     //preparer//
-    $query = $dbh->prepare("SELECT * FROM voiture");
+    $query = $dbh->prepare("SELECT * FROM voiture WHERE 1");
     //executer//
     $query->execute();
     //récupérer//
@@ -25,6 +28,8 @@ class Voiture
     foreach ($produits as $value) {
       $produits = new Voiture(
         $value['id'],
+        $value['date'],
+        $value['enchere'],
         $value["marque"],
         $value["modele"],
         $value['puissance'],
@@ -36,21 +41,22 @@ class Voiture
     }
     return $article_database;
   }
-  public function __construct($id, $marque, $modele, $puissance, $image, $annee, $prix_depart)
+  public function __construct($id, $date, $enchere, $marque, $modele, $puissance, $image, $annee, $prix_depart)
   {
     $this->id = $id;
+    $this->date = $date;
+    $this->enchere = (int) $enchere;
     $this->marque = $marque;
     $this->modele = $modele;
     $this->puissance = $puissance;
     $this->image = $image;
     $this->annee = $annee;
     $this->prix = $prix_depart;
-    // a chaque fois que j'ajoute un produit, je vais incrémenter ma variable static counter
-    //self::$counter = self::$counter + 1;
   }
 
   public function afficherToutesLesInformations()
   {
+
     echo "<p>" . $this->getMarque() . "</p>";
     echo "<p>" . $this->getModele() . "</p>";
     echo "<p>" . $this->getPuissance() . "</p>";
@@ -119,5 +125,29 @@ class Voiture
     if ($modele != "") {
       $this->modele = $modele;
     }
+  }
+
+  public function getDate()
+  {
+    return $this->date;
+  }
+  public function getDateFormat(string $format = 'l d F Y')
+  {
+    $date = new DateTime($this->date);
+    return $date->format($format);
+  }
+  public function setDate(string $date)
+  {
+    $this->date = $date;
+  }
+
+  public function getEnchere()
+  {
+    return $this->enchere;
+  }
+
+  public function setEnchere( $enchere)
+  {
+    $this->enchere = $enchere;
   }
 }

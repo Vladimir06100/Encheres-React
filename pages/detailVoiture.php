@@ -17,7 +17,8 @@ include '../classes/detailArticle.class.php';
       <?php
       //appeler static pour récupérer la list
       $produit_list = Detail::findAllArticles();
-      foreach ($produit_list as $produit1) {
+      foreach ($produit_list as $key => $produit1) {
+       
       ?>
 
         <section class="affichageVoiture">

@@ -14,17 +14,25 @@ class Detail extends Voiture
       ///   $f = $_GET['id'];
 
 
-
+      // $id = $_GET["id"];.....
       $query = $dbh->prepare("SELECT voiture.*, vendeur.* FROM voiture LEFT JOIN vendeur ON voiture.id_vendeur = vendeur.id ");
       //executer//
       $query->execute();
       //récupérer//
       $produits1 = $query->fetchAll(PDO::FETCH_ASSOC);
       $article_database = [];
-     
-      foreach ($produits1 as $value) {
+
+
+
+
+      foreach ($produits1 as $key => $value) {
+        //echo $produit1['id'];..
+        // $_SESSION['user_id'] = $produit1['id'];
+        echo $key;
         $produits1 = new Detail(
           $value['id'],
+          $value['date'],
+          $value['enchere'],
           $value["marque"],
           $value["modele"],
           $value['puissance'],
@@ -39,10 +47,10 @@ class Detail extends Voiture
       return $article_database;
     }
   }
-  //..}..
-  public function __construct($id, $marque, $modele, $puissance, $image, $annee, $prix_depart, $nom, $prenom)
+
+  public function __construct($id, $date, $enchere, $marque, $modele, $puissance, $image, $annee, $prix_depart, $nom, $prenom)
   {
-    parent::__construct($id, $marque, $modele, $puissance, $image, $annee, $prix_depart);
+    parent::__construct($id, $date, $enchere, $marque, $modele, $puissance, $image, $annee, $prix_depart);
     $this->nom = $nom;
     $this->prenom = $prenom;
   }

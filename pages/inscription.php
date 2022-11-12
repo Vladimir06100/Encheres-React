@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php
 //inscription register version PDO et formulaire
 $dbh = new PDO("mysql:dbname=encheres;host=localhost", "root", "root");
