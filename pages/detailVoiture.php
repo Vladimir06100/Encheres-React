@@ -16,7 +16,7 @@ include '../classes/detailArticle.class.php';
     <section class="sectionPrincipale">
       <?php
       //appeler static pour récupérer la list
-      $produit_list = Detail::findAll();
+      $produit_list = Detail::findAllArticles();
       foreach ($produit_list as $produit1) {
       ?>
 
@@ -25,7 +25,7 @@ include '../classes/detailArticle.class.php';
             <p><?php echo "Marque : " . $produit1->getMarque(); ?></p>
             <p><?php echo "Modèle : " . $produit1->getModele(); ?></p>
             <p><?php echo "Prix de depart : " . $produit1->getPrix(); ?></p>
-            <p><?php var_dump($produit1); ?></p>
+            <p><?php echo "Nom du Vendeur : " . $produit1->nom; ?></p>
           </div>
           <p><?php echo "<img class='img' src='" . $produit1->image . "' />"; ?></p>
         </section>

@@ -99,3 +99,16 @@
   width: auto;
   padding: 0.2rem;
 }
+
+.formEnchere {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.formEnchere input {
+  margin: 1rem;
+  padding: .3rem;
+}

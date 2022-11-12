@@ -1,6 +1,7 @@
 <?php
 class Voiture
 {
+  public ?string $id;
   private string $marque;
   private string $modele;
   private int $puissance;
@@ -23,6 +24,7 @@ class Voiture
     $article_database = [];
     foreach ($produits as $value) {
       $produits = new Voiture(
+        $value['id'],
         $value["marque"],
         $value["modele"],
         $value['puissance'],
@@ -34,8 +36,9 @@ class Voiture
     }
     return $article_database;
   }
-  public function __construct($marque, $modele, $puissance, $image, $annee, $prix_depart)
+  public function __construct($id, $marque, $modele, $puissance, $image, $annee, $prix_depart)
   {
+    $this->id = $id;
     $this->marque = $marque;
     $this->modele = $modele;
     $this->puissance = $puissance;
@@ -52,7 +55,7 @@ class Voiture
     echo "<p>" . $this->getModele() . "</p>";
     echo "<p>" . $this->getPuissance() . "</p>";
     echo "<img src=\"" . $this->image . "\" >";
-    echo "<p>". $this->getAnnee(). "</p>";
+    echo "<p>" . $this->getAnnee() . "</p>";
     echo "<p>" . $this->getPrix() . "</p>";
   }
 

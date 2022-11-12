@@ -10,6 +10,7 @@
   <div class="principale">
     <section class="sectionPrincipale">
       <h1>Bienvenue sur votre Profile </h1>
+      <a class="btn-accueil" href="/Encheres/pages/CreateEnchere.php">cree un enchere</a>
     </section>
   </div>
   <?php include_once '../template/footer.php' ?>
