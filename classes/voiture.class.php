@@ -1,9 +1,8 @@
 <?php
 class Voiture
 {
-  public ?string $id;
-  private  string $date;
-
+  public string $id;
+  private string $date;
   private int $enchere;
   private string $marque;
   private string $modele;
@@ -11,8 +10,6 @@ class Voiture
   public string $image;
   private string $annee;
   private string $prix;
-
-
 
   public static function findAllArticles()
   {
@@ -56,7 +53,6 @@ class Voiture
 
   public function afficherToutesLesInformations()
   {
-
     echo "<p>" . $this->getMarque() . "</p>";
     echo "<p>" . $this->getModele() . "</p>";
     echo "<p>" . $this->getPuissance() . "</p>";
@@ -64,43 +60,36 @@ class Voiture
     echo "<p>" . $this->getAnnee() . "</p>";
     echo "<p>" . $this->getPrix() . "</p>";
   }
-
   public function getMarque()
   {
     return $this->marque;
   }
-
   public function setMarque($marque)
   {
     if ($marque != "") {
       $this->marque = $marque;
     }
   }
-
   public function getAnnee()
   {
     return 'annee' . $this->annee;
   }
-
   public function setAnnee($annee)
   {
     if ($annee != "") {
       $this->annee = $annee;
     }
   }
-
   public function getPuissance()
   {
     return $this->puissance . 'Chevaux';
   }
-
   public function setPuissance($puissance)
   {
     if ($puissance != "") {
       $this->puissance = $puissance;
     }
   }
-  // on affiche le prix 
   public function getPrix()
   {
     return $this->prix . "€";
@@ -108,9 +97,7 @@ class Voiture
 
   public function setPrix(float $value)
   {
-    // Si ma valeur est supérieur ou égale a 0
     if ($value >= 0) {
-      // Je met a jour ma valeur
       $this->prix = number_format($value, 2);
     }
   }
@@ -146,7 +133,7 @@ class Voiture
     return $this->enchere;
   }
 
-  public function setEnchere( $enchere)
+  public function setEnchere($enchere)
   {
     $this->enchere = $enchere;
   }

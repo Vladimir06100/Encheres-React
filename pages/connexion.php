@@ -6,6 +6,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $query->execute([$_POST['email'], $_POST['password']]);
   //récupérer//
   $produits = $query->fetchAll(PDO::FETCH_ASSOC);
+  //je verifie que ce que jai recup existe
+  // si il existe
+  //alors je stock linfo en session
+  
   if (!empty($produits)) {
     header("Location: http://localhost:8888/Encheres/pages/pageProfile.php");
   } else {

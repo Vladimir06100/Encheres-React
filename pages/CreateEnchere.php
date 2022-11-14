@@ -1,9 +1,9 @@
 <?php session_start();
-
+//je verifie si lutilisateur est conencte
+//si il ne les pas je redige ailleur
+// sinon je le laisse aller sur la page
 $dbh = new PDO("mysql:dbname=encheres;host=localhost", "root", "root");
 if (isset($_POST['marque'])) {
-
-
   $enchere = $_POST['enchere'];
   $marque = $_POST['marque'];
   $modele = $_POST['modele'];
