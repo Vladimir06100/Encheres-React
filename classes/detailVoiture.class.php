@@ -20,6 +20,7 @@ class Detail extends Voiture
         $article_database = [];
         foreach ($produits1 as $value) {
           $produits1 = new Detail(
+            
             $value['id'],
             $value['date'],
             $value['enchere'],
