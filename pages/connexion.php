@@ -2,23 +2,15 @@
 session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $dbh = new PDO("mysql:dbname=encheres;host=localhost", "root", "root");
-  $query = $dbh->prepare("SELECT users.email, users.password FROM users WHERE email= ? AND password= ? ");
+  $query = $dbh->prepare("SELECT * FROM users WHERE email= ? AND password= ? ");
   $query->execute([$_POST['email'], $_POST['password']]);
   //récupérer//
-  $produits = $query->fetchAll(PDO::FETCH_ASSOC);
-  //je verifie que ce que jai récup existe
-
-  // si il existe
-  //alors je stock l'info en session
+  $produits = $query->fetch(PDO::FETCH_ASSOC);
   if (!empty($produits)) {
-    //$nom = $_POST['nom'];
-  //  $prenom = $_POST['prenom'];
-   // $email = $_POST['email'];
-   // $password = $_POST['password'];
-   // $_SESSION['nom'] = $nom;
-   // $_SESSION['prenom'] = $prenom;
-   // $_SESSION['email'] = $email;
-    //$_SESSION['password'] = $password;
+    $_SESSION['nom'] = $produits['nom'];
+    $_SESSION['prenom'] = $produits['prenom'];
+    $_SESSION['email'] = $produits['email'];
+    $_SESSION['password']= $produits['password'];
     header("Location: http://localhost:8888/Encheres/pages/pageProfile.php");
   } else {
     echo '<label>Email ou mot de passe Incorrect!!</label>';
