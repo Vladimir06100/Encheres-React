@@ -3,10 +3,8 @@ session_start();
 $_SESSION['id'];
 include '../classes/detailVoiture.class.php';
 ?>
-
 <!DOCTYPE html>
 <html>
-
 <head>
   <link rel="stylesheet" href="../template/index.css">
 </head>

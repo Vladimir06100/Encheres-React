@@ -18,15 +18,12 @@ if (isset($_POST['nom'])) {
 ?>
 <!DOCTYPE html>
 <html>
-
 <head>
   <link rel="stylesheet" href="../template/index.css" />
 </head>
-
 <body>
   <?php include_once '../template/header.php' ?>
   <div class="principale">
-
     <div class="sectionPrincipale">
       <h1>Enregistrez-vous</h1>
       <section>

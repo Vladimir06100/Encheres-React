@@ -9,15 +9,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   //je verifie que ce que jai recup existe
   // si il existe
   //alors je stock linfo en session
-  
+  $_SESSION["email"] = $_POST["email"];
+  $_SESSION["password"] = $_POST["password"];
   if (!empty($produits)) {
     header("Location: http://localhost:8888/Encheres/pages/pageProfile.php");
+    
   } else {
   '<label>Email ou mot de passe Incorrect!!</label>';
   }
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 

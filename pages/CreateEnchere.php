@@ -1,5 +1,10 @@
 <?php session_start();
 //je verifie si lutilisateur est conencte
+if ($_SESSION['id']) {
+  echo 'bravo';
+} else {
+  echo 'pas bravo';
+}
 //si il ne les pas je redige ailleur
 // sinon je le laisse aller sur la page
 $dbh = new PDO("mysql:dbname=encheres;host=localhost", "root", "root");
@@ -47,7 +52,7 @@ if (isset($_POST['marque'])) {
             <input type="text" name="annee" placeholder="annee" />
             <label>Prix de depart (uniquement Chiffres)</label>
             <input type="text" name="prix_depart" placeholder="prix_depart" />
-            
+
             <input type="submit" name="enregistrer" />
           </form>
           <section>
