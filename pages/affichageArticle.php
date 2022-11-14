@@ -21,7 +21,7 @@
         <div class="textVoiture">
           <p>
             <?php echo "Marque : " . $produit->getMarque(); ?>
-          </p>x
+          </p>
           <a class="btn-detail" href="/Encheres/pages/detailVoiture.php?id=<?php echo $produit->id; ?>">Voir les
             Detail</a>
         </div>

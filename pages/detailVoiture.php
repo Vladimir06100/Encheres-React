@@ -37,6 +37,9 @@ include '../classes/detailVoiture.class.php';
           <p>
             <?php echo "Nom du Vendeur : " . $produit1->nom; ?>
           </p>
+          <p>
+            <?php echo "Nom du Vendeur : " . $produit1->prenomUser; ?>
+          </p>
         </div>
         <p>
           <?php echo "<img class='img' src='" . $produit1->image . "' />"; ?>
