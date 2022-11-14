@@ -1,10 +1,5 @@
 <?php session_start();
 //je verifie si l'utilisateur est connecté
-if ($_SESSION['id']) {
-  echo 'bravo';
-} else {
-  echo 'pas bravo';
-}
 //si il ne les pas je redirige ailleurs
 
 // sinon je le laisse aller sur la page
