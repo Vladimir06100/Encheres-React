@@ -6,16 +6,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $query->execute([$_POST['email'], $_POST['password']]);
   //récupérer//
   $produits = $query->fetchAll(PDO::FETCH_ASSOC);
-  //je verifie que ce que jai recup existe
+  //je verifie que ce que jai récup existe
+
   // si il existe
-  //alors je stock linfo en session
-  $_SESSION["email"] = $_POST["email"];
-  $_SESSION["password"] = $_POST["password"];
+  //alors je stock l'info en session
   if (!empty($produits)) {
+    //$nom = $_POST['nom'];
+  //  $prenom = $_POST['prenom'];
+   // $email = $_POST['email'];
+   // $password = $_POST['password'];
+   // $_SESSION['nom'] = $nom;
+   // $_SESSION['prenom'] = $prenom;
+   // $_SESSION['email'] = $email;
+    //$_SESSION['password'] = $password;
     header("Location: http://localhost:8888/Encheres/pages/pageProfile.php");
-    
   } else {
-  '<label>Email ou mot de passe Incorrect!!</label>';
+    echo '<label>Email ou mot de passe Incorrect!!</label>';
   }
 }
 ?>

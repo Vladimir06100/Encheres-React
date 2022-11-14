@@ -4,11 +4,8 @@ class Detail extends Voiture
 {
   public ?string $nom = null;
   public ?string $prenom = null;
-
   public ?string $nomUser = null;
-
   public ?string $prenomUser = null;
-
   public static function findAllArticles($id)
   {
     if ($_SERVER["REQUEST_METHOD"] == "GET") {
@@ -39,7 +36,6 @@ class Detail extends Voiture
           );
           array_push($article_database, $produits1);
         }
-        var_dump($article_database);
         return $article_database;
       }
     }
@@ -61,6 +57,5 @@ class Detail extends Voiture
     echo "<p>" . $this->prenom . "</p>";
     echo "<p>" . $this->nomUser . "</p>";
     echo "<p>" . $this->prenomUser . "</p>";
-
   }
 }

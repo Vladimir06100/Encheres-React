@@ -5,6 +5,7 @@ include '../classes/detailVoiture.class.php';
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
   <link rel="stylesheet" href="../template/index.css">
 </head>
@@ -14,13 +15,10 @@ include '../classes/detailVoiture.class.php';
   <div class="principale">
     <section class="sectionPrincipale">
       <?php
-      //appeler static pour récupérer la list
       $_GET['id'];
       $produit_list = Detail::findAllArticles($_GET['id']);
       foreach ($produit_list as $key => $produit1) {
-
       ?>
-
       <section class="affichageVoiture">
         <div class="textVoiture">
           <p>
@@ -36,7 +34,7 @@ include '../classes/detailVoiture.class.php';
             <?php echo "Nom du Vendeur : " . $produit1->nom; ?>
           </p>
           <p>
-            <?php echo "Nom du Vendeur : " . $produit1->prenomUser; ?>
+            <?php echo "Nom du Acheteur : " . $produit1->nomUser; ?>
           </p>
         </div>
         <p>

@@ -10,6 +10,10 @@ if (isset($_POST['nom'])) {
   $register = $dbh->prepare("INSERT INTO `users`(`id`, `nom`, `prenom`, `email`, `password`) VALUES (NULL,'$nom','$prenom','$email','$password')");
   $register->execute();
   if ($register) {
+    $_SESSION['nom'] = $nom;
+    $_SESSION['prenom'] = $prenom;
+    $_SESSION['email'] = $email;
+    $_SESSION['password'] = $password;
     header("Location: http://localhost:8888/Encheres/pages/pageProfile.php");
   } else {
     echo "<h1>Error</h1>";
@@ -18,9 +22,11 @@ if (isset($_POST['nom'])) {
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
   <link rel="stylesheet" href="../template/index.css" />
 </head>
+
 <body>
   <?php include_once '../template/header.php' ?>
   <div class="principale">

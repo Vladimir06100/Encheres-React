@@ -14,9 +14,7 @@
       //appeler static pour récupérer la list
       $produit_list = Voiture::findAllArticles();
       foreach ($produit_list as $produit) {
-
       ?>
-
       <section class="affichageVoiture">
         <div class="textVoiture">
           <p>

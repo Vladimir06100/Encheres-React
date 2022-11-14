@@ -20,7 +20,6 @@ class Voiture
     $query->execute();
     //récupérer//
     $produits = $query->fetchAll(PDO::FETCH_ASSOC);
-
     $article_database = [];
     foreach ($produits as $value) {
       $produits = new Voiture(
